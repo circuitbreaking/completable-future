@@ -2,15 +2,25 @@ plugins {
     id 'java'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_13
+    targetCompatibility = JavaVersion.VERSION_13
+}
+
 group 'org.circuitbreaking.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 13
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+    implementation 'org.apache.logging.log4j:log4j-api:2.13.3'
+    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.13.3'
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

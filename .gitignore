@@ -3,6 +3,7 @@ HELP.md
 .class
 /build/
 build
+*.log
 
 ### STS ###
 .apt_generated
