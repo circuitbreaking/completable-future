@@ -14,14 +14,10 @@ import static com.circuitbreaking.threads.summation.function.IntFunctions.sumSqu
 public class SquareCubeSummingExecutor {
 
   public static void sumSquareCube(int n) throws InterruptedException, ExecutionException {
-
     ExecutorService executorService = Executors.newFixedThreadPool(2);
-
     Future<Integer> s1 = executorService.submit(() -> sumSquares(n));
     Future<Integer> s2 = executorService.submit(() -> sumCubes(n));
-
     log.info("Sum {}", s1.get() + s2.get());
-
     executorService.shutdown();
   }
 }

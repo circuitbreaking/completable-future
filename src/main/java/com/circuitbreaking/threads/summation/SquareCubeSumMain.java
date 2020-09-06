@@ -8,13 +8,14 @@ import static com.circuitbreaking.threads.summation.function.IntFunctions.sumCub
 import static com.circuitbreaking.threads.summation.function.IntFunctions.sumSquares;
 
 @Slf4j
-public class SquareCubeSum {
+public class SquareCubeSumMain {
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
     sumSquareCube(5);
     SquareCubeSummingThread.sumSquareCube(5);
     SquareCubeSummingExecutor.sumSquareCube(5);
     SquareCubeSummingCompletableFuture.sumSquareCube(5);
+    SquareCubeSummingCompletableFutureTimeout.sumSquareCubeWithDefault(5);
   }
 
   static void sumSquareCube(int n) {
